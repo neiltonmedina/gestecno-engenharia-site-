@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gestecnoengenharia.com.br/sitemap.xml
