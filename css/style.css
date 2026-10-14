@@ -341,7 +341,7 @@ mark.tbc {
 .credentials { position: relative; z-index: 2; margin-top: -2.5rem; }
 .credentials__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   background: var(--color-bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -779,6 +779,7 @@ mark.tbc {
 @media (min-width: 640px) {
   :root { --gutter: 2rem; }
   .credentials__item { padding: 1.5rem; }
+  .credentials__list { max-width: 560px; }
   .cards,
   .gallery,
   .steps { grid-template-columns: repeat(2, 1fr); }
