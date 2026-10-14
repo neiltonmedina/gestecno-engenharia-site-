@@ -102,7 +102,7 @@
 
   /* ---------- Animação de entrada dos blocos ---------- */
   var revealTargets = document.querySelectorAll(
-    ".section__head, .about__text, .about__cta, .card, .step, .feature, .gallery__item, .contact__intro, .contact__list, .cta-band__inner"
+    ".section__head, .about__text, .about__cta, .card, .step, .advantages__intro, .advantage, .gallery__item, .contact__intro, .contact__list, .cta-band__inner"
   );
   if (!reduceMotion && "IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(function (entries) {

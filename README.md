@@ -25,7 +25,7 @@ gestecno-engenharia-site-/
 ├── favicon.ico
 ├── robots.txt
 ├── sitemap.xml
-├── vercel.json                 # cabeçalhos de cache e segurança
+├── vercel.json                 # cabeçalhos de cache e segurança (inclui Content-Security-Policy)
 └── .vercelignore               # README e scripts não são publicados
 ```
 
@@ -206,6 +206,13 @@ Este repositório contém só o site, então a raiz do projeto é a própria rai
 - (Opcional) Cadastre o site no Google Search Console e envie o `sitemap.xml`.
 
 ---
+
+## Segurança (Content-Security-Policy)
+
+O `vercel.json` só permite carregar scripts, estilos e imagens do próprio site, e fontes do
+Google Fonts. Se no futuro você incluir algo externo (mapa incorporado, vídeo do YouTube,
+pixel de anúncio, analytics), será preciso liberar o domínio correspondente no cabeçalho
+`Content-Security-Policy`; caso contrário, o recurso será bloqueado pelo navegador.
 
 ## Decisões técnicas
 
