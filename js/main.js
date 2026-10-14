@@ -84,16 +84,17 @@
     navLinks.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
     var sectionObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (a) { a.classList.remove("is-active"); a.removeAttribute("aria-current"); });
         var link = byId[entry.target.id];
-        if (!link) return;
-        if (entry.isIntersecting) {
-          navLinks.forEach(function (a) { a.classList.remove("is-active"); a.removeAttribute("aria-current"); });
+        if (link) {
           link.classList.add("is-active");
           link.setAttribute("aria-current", "true");
         }
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    Object.keys(byId).forEach(function (id) {
+    // O topo (sem item no menu) limpa o destaque
+    Object.keys(byId).concat(["inicio"]).forEach(function (id) {
       var section = document.getElementById(id);
       if (section) sectionObserver.observe(section);
     });
@@ -101,7 +102,7 @@
 
   /* ---------- Animação de entrada dos blocos ---------- */
   var revealTargets = document.querySelectorAll(
-    ".section__head, .about__text, .about__facts, .card, .step, .feature, .gallery__item, .contact__intro, .contact__list, .cta-band__inner"
+    ".section__head, .about__text, .about__cta, .card, .step, .feature, .gallery__item, .contact__intro, .contact__list, .cta-band__inner"
   );
   if (!reduceMotion && "IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(function (entries) {

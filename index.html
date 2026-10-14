@@ -178,13 +178,13 @@
       </div>
     </section>
 
-    <!-- Faixa de credenciais (somente dados verificáveis do cartão CNPJ) -->
+    <!-- Faixa de destaques -->
     <section class="credentials" aria-label="Dados da empresa">
       <div class="container">
         <ul class="credentials__list" role="list">
           <li class="credentials__item">
             <span class="credentials__value">2005</span>
-            <span class="credentials__label">Ano de fundação</span>
+            <span class="credentials__label">No mercado desde</span>
           </li>
           <li class="credentials__item">
             <span class="credentials__value">PA</span>
@@ -193,10 +193,6 @@
           <li class="credentials__item">
             <span class="credentials__value">6</span>
             <span class="credentials__label">Frentes de atuação</span>
-          </li>
-          <li class="credentials__item">
-            <span class="credentials__value">CNPJ</span>
-            <span class="credentials__label">07.481.614/0001-81</span>
           </li>
         </ul>
       </div>
@@ -210,7 +206,7 @@
           <h2 id="quem-somos-titulo" class="section__title">Engenharia e execução na mesma empresa</h2>
           <p class="about__lead">
             A <strong>Gestecno Engenharia</strong> é uma empresa de engenharia e construção
-            sediada em Parauapebas, no Pará, constituída em 2005.
+            sediada em Parauapebas, no Pará, fundada em 2005.
           </p>
           <p>
             Tem como atividade principal a construção de edifícios e atua também em obras de
@@ -223,38 +219,24 @@
           <ul class="checklist" role="list">
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Serviços de engenharia e execução de obras</li>
             <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Edificações e infraestrutura</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Empresa regularmente inscrita no CNPJ desde 2005</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>No mercado de engenharia e construção desde 2005</li>
           </ul>
         </div>
-        <aside class="about__facts" aria-label="Ficha da empresa">
-          <h3 class="facts__title">Ficha da empresa</h3>
-          <dl class="facts">
-            <div class="facts__item">
-              <dt>Razão social</dt>
-              <dd>GESTECNO ENGENHARIA LTDA</dd>
-            </div>
-            <div class="facts__item">
-              <dt>CNPJ</dt>
-              <dd>07.481.614/0001-81</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Fundação</dt>
-              <dd>2005</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Sede</dt>
-              <dd>Parauapebas – PA</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Atividade principal</dt>
-              <dd>Construção de edifícios</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Responsável técnico</dt>
-              <dd><mark class="tbc">[A CONFIRMAR: nome e registro CREA/CAU]</mark></dd>
-            </div>
-          </dl>
-          <a class="facts__link" href="/assets/portfolio/portfolio-gestecno.pdf" download>
+        <aside class="about__cta" aria-labelledby="about-cta-titulo">
+          <h3 id="about-cta-titulo" class="about__cta-title">Precisa de uma proposta?</h3>
+          <p>Para agilizar o orçamento, envie pelo WhatsApp:</p>
+          <ul class="about__cta-list" role="list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>Tipo de obra ou serviço</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Local da obra</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg>Projetos ou fotos, se houver</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Prazo desejado</li>
+          </ul>
+          <a class="btn btn--accent btn--lg about__cta-btn" href="https://wa.me/55DDDNUMERO?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Solicitar orçamento
+            <span class="visually-hidden">(abre o WhatsApp em nova aba)</span>
+          </a>
+          <a class="about__cta-link" href="/assets/portfolio/portfolio-gestecno.pdf" download>
             <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
             Baixar apresentação (PDF)
           </a>
@@ -400,12 +382,12 @@
           <h2 id="diferenciais-titulo" class="section__title">Uma empresa local, com estrutura para obras completas</h2>
         </div>
 
-        <!-- Itens baseados no cartão CNPJ. Troque por diferenciais reais da empresa quando houver (3 a 6 itens). -->
+        <!-- Itens baseados em dados da empresa. Troque por diferenciais reais da empresa quando houver (3 a 6 itens). -->
         <ul class="features" role="list">
           <li class="feature">
             <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
             <h3 class="feature__title">Desde 2005</h3>
-            <p class="feature__text">Empresa constituída em 2005, com CNPJ ativo.</p>
+            <p class="feature__text">No mercado de engenharia e construção desde 2005.</p>
           </li>
           <li class="feature">
             <span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
@@ -571,7 +553,7 @@
             <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
             <div>
               <span class="contact__label">Telefone</span>
-              <a href="tel:+55DDDNUMERO"><mark class="tbc">[A CONFIRMAR: telefone — no CNPJ consta (94) 9215-5221]</mark></a>
+              <a href="tel:+55DDDNUMERO"><mark class="tbc">[A CONFIRMAR: (94) NNNN-NNNN]</mark></a>
             </div>
           </li>
           <li>

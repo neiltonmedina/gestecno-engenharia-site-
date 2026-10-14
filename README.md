@@ -4,7 +4,7 @@ Site de uma página da **GESTECNO ENGENHARIA LTDA**, feito em HTML + CSS + JavaS
 sem framework e sem etapa de build. Pronto para publicar na Vercel em
 `https://gestecnoengenharia.com.br`.
 
-> **Status:** layout final, galeria com lightbox e dados do cartão CNPJ prontos.
+> **Status:** layout final, galeria com lightbox e dados da empresa prontos.
 > Falta preencher os itens `[A CONFIRMAR]` (principalmente WhatsApp, Instagram e fotos reais).
 
 ---
@@ -73,8 +73,9 @@ com "Localizar e substituir":
 
 ### Dados já preenchidos (fonte: cartão CNPJ da Receita Federal)
 
-Razão social, CNPJ `07.481.614/0001-81`, ano de constituição (2005), endereço da sede
-(Parauapebas/PA) e e-mail `comercial@gestecnoengenharia.com.br`.
+Ano de fundação (2005), endereço da sede (Parauapebas/PA) e e-mail
+`comercial@gestecnoengenharia.com.br`. Razão social e CNPJ aparecem só no rodapé e nos
+dados estruturados (SEO), que não são visíveis na página.
 Os **cards de Serviços** e os **Diferenciais** foram escritos a partir das atividades
 registradas no CNPJ (CNAEs) — revise com a empresa e ajuste ao que ela realmente executa hoje.
 O telefone do cartão CNPJ, `(94) 9215-5221`, tem só 8 dígitos e pode estar desatualizado; por isso
