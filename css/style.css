@@ -297,7 +297,7 @@ mark.tbc {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 4.5rem 0 5.5rem;
+  padding: 4rem 0 4.5rem;
   background: var(--color-primary-deep);
   color: var(--color-on-dark);
 }
@@ -336,34 +336,6 @@ mark.tbc {
   color: var(--color-on-dark-muted);
 }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
-
-/* ---------- Faixa de credenciais ---------- */
-.credentials { position: relative; z-index: 2; margin-top: -2.5rem; }
-.credentials__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-.credentials__item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  padding: 1.1rem 0.75rem;
-  text-align: center;
-  border-right: 1px solid var(--color-border);
-}
-.credentials__item:last-child { border-right: 0; }
-.credentials__value {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--color-primary);
-}
-.credentials__label { font-size: 0.8rem; line-height: 1.35; color: var(--color-text-muted); }
 
 /* ---------- Seções ---------- */
 .section { padding: var(--section-space) 0; }
@@ -778,8 +750,6 @@ mark.tbc {
    ========================================================================== */
 @media (min-width: 640px) {
   :root { --gutter: 2rem; }
-  .credentials__item { padding: 1.5rem; }
-  .credentials__list { max-width: 560px; }
   .cards,
   .gallery,
   .steps { grid-template-columns: repeat(2, 1fr); }
@@ -836,12 +806,9 @@ mark.tbc {
   .site-nav__list a.is-active::after { transform: scaleX(1); }
   .site-nav__cta { align-self: auto; }
 
-  .hero { padding: 7.5rem 0 9rem; min-height: 620px; display: flex; align-items: center; }
+  .hero { padding: 7rem 0; min-height: 580px; display: flex; align-items: center; }
   .hero__bg { object-position: center; }
 
-  .credentials { margin-top: -3.5rem; }
-  .credentials__item { padding: 1.75rem 2rem; }
-  .credentials__value { font-size: 2rem; }
 
   .section__head--split { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; }
   .section__head--split .section__title { margin-bottom: 0; }
