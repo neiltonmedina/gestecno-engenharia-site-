@@ -4,8 +4,8 @@ Site de uma página da **GESTECNO ENGENHARIA LTDA**, feito em HTML + CSS + JavaS
 sem framework e sem etapa de build. Pronto para publicar na Vercel em
 `https://gestecnoengenharia.com.br`.
 
-> **Status:** estrutura e conteúdo da página prontos para revisão. Próximas etapas:
-> acabamento final do CSS e lightbox da galeria.
+> **Status:** layout final, galeria com lightbox e dados do cartão CNPJ prontos.
+> Falta preencher os itens `[A CONFIRMAR]` (principalmente WhatsApp, Instagram e fotos reais).
 
 ---
 
@@ -15,7 +15,7 @@ sem framework e sem etapa de build. Pronto para publicar na Vercel em
 gestecno-engenharia-site-/
 ├── index.html                  # página única com todas as seções
 ├── css/style.css               # estilos (cores e fontes em :root)
-├── js/main.js                  # menu hambúrguer, ano do rodapé (lightbox na próxima etapa)
+├── js/main.js                  # menu, lightbox da galeria, animações de entrada, ano do rodapé
 ├── assets/
 │   ├── img/                    # logo, favicon, imagem do hero, imagem de compartilhamento (og)
 │   ├── obras/                  # fotos da galeria (WebP)
@@ -87,14 +87,16 @@ o telefone e o WhatsApp continuam como `[A CONFIRMAR]`.
 - [ ] JSON-LD `sameAs`: usuário do Instagram
 
 **Apresentação (hero)**
-- [ ] Foto do hero: substituir `assets/img/hero.webp` (foto real, ~1600×1200) e o `alt`
+- [ ] Foto do hero: substituir `assets/img/hero.webp` por uma foto real de obra, horizontal, ~1920×1080
+      (a imagem atual é uma ilustração provisória; o site já aplica uma camada azul por cima para o texto ficar legível)
 
 **Quem somos**
 - [ ] História e perfil (quem fundou, tipos de obra, público atendido, região de atuação)
 - [ ] Quadro lateral: responsável técnico (nome + CREA/CAU)
 
-**Serviços e Diferenciais**
+**Serviços, Como trabalhamos e Diferenciais**
 - [ ] Revisar os textos baseados nos CNAEs
+- [ ] Confirmar se as 4 etapas de "Como trabalhamos" refletem o processo real da empresa
 
 **Obras**
 - [ ] 6 fotos reais em `assets/obras/` + `alt` de cada uma
