@@ -60,55 +60,50 @@ Todo conteúdo pendente aparece **destacado em amarelo** na página e segue o fo
 [A CONFIRMAR
 ```
 
-Além disso, há **3 marcadores dentro de links** (não aparecem como texto). Troque todos
+Além disso, há **2 marcadores dentro de links** (não aparecem como texto). Troque todos
 com "Localizar e substituir":
 
 | Marcador            | O que colocar                                                       | Exemplo            |
 |---------------------|---------------------------------------------------------------------|--------------------|
-| `55DDDNUMERO`       | WhatsApp/telefone: 55 + DDD + número, **só dígitos**                 | `5591988887777`    |
+| `55DDDNUMERO`       | WhatsApp/telefone: 55 + DDD + número, **só dígitos**                 | `5594999998888`    |
 | `USUARIO_INSTAGRAM` | usuário do Instagram, sem `@`                                       | `gestecnoeng`      |
-| `EMAIL_A_CONFIRMAR` | e-mail de contato                                                   | `contato@...`      |
 
 > Se o telefone fixo for diferente do WhatsApp, troque o `tel:+55DDDNUMERO`
 > manualmente (seção Contato).
 
-### Lista completa por seção
+### Dados já preenchidos (fonte: cartão CNPJ da Receita Federal)
+
+Razão social, CNPJ `07.481.614/0001-81`, ano de constituição (2005), endereço da sede
+(Parauapebas/PA) e e-mail `comercial@gestecnoengenharia.com.br`.
+Os **cards de Serviços** e os **Diferenciais** foram escritos a partir das atividades
+registradas no CNPJ (CNAEs) — revise com a empresa e ajuste ao que ela realmente executa hoje.
+O telefone do cartão CNPJ, `(94) 9215-5221`, tem só 8 dígitos e pode estar desatualizado; por isso
+o telefone e o WhatsApp continuam como `[A CONFIRMAR]`.
+
+### Lista do que falta, por seção
 
 **`<head>` / SEO (index.html)**
-- [ ] Meta description: principais serviços e cidade/região atendida
-- [ ] JSON-LD: descrição curta, CNPJ (`taxID`), telefone, e-mail, endereço completo (rua, cidade, UF, CEP), área atendida
+- [ ] JSON-LD: `telephone` e `areaServed` (cidades/região atendida)
 - [ ] JSON-LD `sameAs`: usuário do Instagram
 
 **Apresentação (hero)**
-- [ ] Complemento do subtítulo: serviços e região
 - [ ] Foto do hero: substituir `assets/img/hero.webp` (foto real, ~1600×1200) e o `alt`
 
 **Quem somos**
-- [ ] História da empresa
-- [ ] Experiência (responsável técnico, formação, tipos de obra)
-- [ ] Perfil da empresa (público, forma de trabalho, região)
-- [ ] Quadro lateral: CNPJ, responsável técnico (nome + CREA/CAU), região atendida
+- [ ] História e perfil (quem fundou, tipos de obra, público atendido, região de atuação)
+- [ ] Quadro lateral: responsável técnico (nome + CREA/CAU)
 
-**Serviços** (6 cards — os títulos são *sugestões*; confirme, edite ou remova)
-- [ ] Frase de abertura da seção
-- [ ] Título e descrição de cada card
-
-**Diferenciais** (4 itens — *sugestões*; mantenha só o que for verdadeiro, de 3 a 6)
-- [ ] Título e frase de cada diferencial
+**Serviços e Diferenciais**
+- [ ] Revisar os textos baseados nos CNAEs
 
 **Obras**
 - [ ] 6 fotos reais em `assets/obras/` + `alt` de cada uma
 - [ ] Legenda de cada obra: nome, cidade/UF, serviço executado (na `figcaption` **e** no `data-caption`)
 
 **Contato**
-- [ ] Número do WhatsApp (exibido) e telefone
-- [ ] E-mail
-- [ ] Endereço
+- [ ] Número do WhatsApp (exibido e no link) e telefone
 - [ ] @ do Instagram
 - [ ] Portfólio: substituir `assets/portfolio/portfolio-gestecno.pdf` (manter o mesmo nome)
-
-**Rodapé**
-- [ ] CNPJ
 
 **Arquivos**
 - [ ] `sitemap.xml`: atualizar `<lastmod>` quando publicar
