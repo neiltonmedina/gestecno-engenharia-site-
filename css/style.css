@@ -404,6 +404,38 @@ mark.tbc {
 .about__cta-link:hover { color: var(--color-accent-hover); text-decoration: underline; }
 .about__cta :focus-visible { outline-color: var(--color-on-dark); }
 
+/* ---------- Missão, Visão e Valores ---------- */
+.principles { padding-top: 0; }
+.principles__list { display: grid; gap: 1.25rem; }
+.principle {
+  position: relative;
+  padding: 2rem 1.75rem 1.75rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.principle::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(var(--color-accent), var(--color-primary));
+}
+.principle__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent-dark);
+}
+.principle__icon .icon { width: 22px; height: 22px; }
+.principle__title { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.principle__text { margin: 0; color: var(--color-text-muted); }
+
 /* ---------- 4. Serviços ---------- */
 .cards { display: grid; gap: 1.25rem; }
 .card {
@@ -675,15 +707,9 @@ mark.tbc {
 .site-footer a { color: var(--color-on-dark-muted); text-decoration: none; }
 .site-footer a:hover { color: var(--color-accent); }
 .site-footer :focus-visible { outline-color: var(--color-accent); }
-.site-footer__logo {
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.6rem 0.9rem;
-  background: var(--color-bg);
-  border-radius: var(--radius);
-}
-.site-footer__logo img { width: 190px; height: auto; }
-.site-footer a.site-footer__logo:hover { opacity: 0.92; }
+.site-footer__logo { display: inline-block; margin-bottom: 1rem; }
+.site-footer__logo img { width: 200px; height: auto; }
+.site-footer a.site-footer__logo:hover { opacity: 0.9; }
 .site-footer__heading {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -753,6 +779,7 @@ mark.tbc {
   .cards,
   .gallery,
   .steps { grid-template-columns: repeat(2, 1fr); }
+  .principles__list { grid-template-columns: repeat(3, 1fr); }
   .cta-band__inner { grid-template-columns: 1fr auto; }
   .site-footer__grid { grid-template-columns: repeat(2, 1fr); }
 }
