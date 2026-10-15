@@ -8,6 +8,7 @@
   Fonte do portfólio em PDF (assets/portfolio/portfolio-gestecno.pdf).
   Para gerar o PDF de novo depois de editar: node scripts/portfolio/gerar_pdf.js
   Ilustrações provisórias: scripts/portfolio/img/ (geradas por ilustracoes.py).
+  Versão de apresentação (empresa em início de atividade, 3 obras).
   Itens [A CONFIRMAR] e imagens marcadas "Imagem ilustrativa" devem ser trocados
   pelos dados e fotos reais da empresa.
 -->
@@ -163,12 +164,55 @@
   .contact b { font-size: 12pt; color: var(--navy); font-weight: 600; }
   .quote { background: var(--soft); border-radius: 3mm; padding: 4.5mm 5mm; font-size: 9.5pt; color: var(--muted); line-height: 1.6; border-left: 1.2mm solid var(--orange); }
   .quote b { color: var(--navy); }
+  .mvv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm; margin-top: 10mm; flex: 1; }
+  .mvv__card { background: var(--soft); border-radius: 4mm; padding: 11mm 10mm; position: relative; overflow: hidden; }
+  .mvv__card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1.4mm; background: linear-gradient(var(--navy), var(--orange)); }
+  .mvv__num { font-family: var(--heading); font-weight: 800; font-size: 40pt; color: rgba(0,24,143,.12); line-height: 1; }
+  .mvv__card h3 { font-size: 22pt; margin: 4mm 0 6mm; }
+  .mvv__card p { font-size: 13pt; line-height: 1.75; color: var(--muted); }
+  .values li { display: flex; gap: 3mm; align-items: center; font-size: 12.5pt; color: var(--text); padding: 3.2mm 0; border-bottom: 1px solid var(--line); }
+  .values li:last-child { border-bottom: 0; }
+  .values li::before { content: ""; width: 2mm; height: 2mm; background: var(--orange); flex: none; }
+  .note { margin-top: auto; margin-bottom: 8mm; background: var(--soft); border-radius: 3.5mm; padding: 6mm 8mm; display: flex; gap: 6mm; align-items: center; }
+  .note strong { font-family: var(--heading); color: var(--navy); font-size: 15pt; white-space: nowrap; }
+  .note p { font-size: 12pt; color: var(--muted); line-height: 1.6; }
+
+  /* ---------- 6. Diferenciais ---------- */
+  .page--dark { background: radial-gradient(120% 140% at 100% 0%, #0a2bb0 0%, var(--navy-dark) 45%, var(--navy-deep) 100%); color: #fff; }
+  .page--dark .title { color: #fff; }
+  .page--dark .lead { color: rgba(255,255,255,.75); }
+  .adv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9mm; margin-top: auto; margin-bottom: 12mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 3mm; margin-top: 10mm; max-width: 200mm; }
+  .chips li { border: 1px solid rgba(255,255,255,.25); border-radius: 20mm; padding: 2.5mm 6mm; font-size: 11pt; color: #fff; font-weight: 500; }
+  .adv__item { border-top: .8mm solid var(--orange); padding-top: 6mm; }
+  .adv__num { font-family: var(--heading); font-weight: 800; font-size: 44pt; color: rgba(255,255,255,.14); line-height: 1; }
+  .adv__item h3 { color: #fff; font-size: 19pt; margin: 4mm 0 3mm; }
+  .adv__item p { color: rgba(255,255,255,.75); font-size: 12.5pt; line-height: 1.65; }
+  .grid-deco { position: absolute; right: -10mm; top: -10mm; width: 120mm; height: 120mm; opacity: .12;
+    background-image: linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+    background-size: 8mm 8mm; -webkit-mask-image: radial-gradient(circle at 70% 30%, #000 0, transparent 70%); mask-image: radial-gradient(circle at 70% 30%, #000 0, transparent 70%); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8mm; margin-top: 22mm; position: relative; }
+  .steps::before { content: ""; position: absolute; top: 11mm; left: 11mm; right: 9mm; height: .6mm; background: repeating-linear-gradient(90deg, var(--line) 0 3mm, transparent 3mm 5mm); }
+  .step { position: relative; }
+  .step__num { width: 22mm; height: 22mm; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-family: var(--heading); font-weight: 800; font-size: 20pt; box-shadow: 0 0 0 2.5mm #e6eaf6; position: relative; }
+  .step:last-child .step__num { background: var(--orange); box-shadow: 0 0 0 2.5mm #ffe6d1; }
+  .step h3 { font-size: 18pt; margin: 10mm 0 4mm; }
+  .step p { font-size: 13pt; line-height: 1.65; color: var(--muted); }
+  /* Apresentação */
+  .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; flex: 1; align-items: center; min-height: 0; }
+  .intro .ill { height: 125mm; }
+  .intro p { font-size: 12pt; line-height: 1.75; color: var(--muted); }
+  .intro p + p { margin-top: 4mm; }
+  .intro strong { color: var(--navy); }
+  .about-desc { margin-top: 5mm; background: var(--soft); border-radius: 3mm; padding: 4.5mm 5mm; font-size: 10pt; line-height: 1.65; color: var(--muted); border-left: 1.2mm solid var(--orange); }
+  .about-desc h4 { font-family: var(--heading); color: var(--navy); font-size: 11pt; margin: 0 0 1.5mm; }
+
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute">
-  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 2.5 2.5 5 5 5l1.2-1.2-1.8-.9-.7.7c-1-.4-1.9-1.3-2.3-2.3l.7-.7-.9-1.8z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol>
@@ -184,7 +228,7 @@
   <div class="cover__inner">
     <img class="cover__logo" src="../../assets/img/logo-gestecno-branca.png" alt="Gestecno Engenharia">
     <div class="cover__body">
-      <p class="eyebrow eyebrow--light">Portfólio de obras e serviços</p>
+      <p class="eyebrow eyebrow--light">Apresentação institucional</p>
       <h1 class="cover__title">Solidez para construir.<span>Excelência para entregar.</span></h1>
       <p class="cover__sub">Edificações, obras de infraestrutura, saneamento, redes elétricas e serviços de engenharia — do planejamento à entrega.</p>
     </div>
@@ -195,36 +239,41 @@
   </div>
 </section>
 
-<!-- 2. QUEM SOMOS + NÚMEROS -->
+<!-- 2. QUEM SOMOS -->
 <section class="page">
-  <div class="about">
+  <div class="intro">
     <div>
       <p class="eyebrow">Quem somos</p>
       <h2 class="title" style="margin-bottom:7mm">Engenharia e <span class="accent">Execução</span></h2>
       <p>A <strong>Gestecno Engenharia</strong> é uma empresa de engenharia e construção sediada em Parauapebas, no Pará.</p>
       <p>Tem como atividade principal a construção de edifícios e atua também em obras de infraestrutura — urbanização, terraplenagem, rodovias, saneamento e redes de energia elétrica —, além de instalações elétricas e hidráulicas, acabamentos e serviços de engenharia.</p>
-      <p>Engenharia e execução lado a lado: o mesmo time que analisa e orça a obra acompanha a execução até a entrega.</p>
+      <p>Trabalhamos com engenharia e execução lado a lado: o mesmo time que analisa e orça a obra acompanha a execução até a entrega.</p>
     </div>
-    <div>
-      <ul class="stats">
-        <li class="stat"><b><span class="tbc">XX</span></b><span>obras entregues</span></li>
-        <li class="stat"><b><span class="tbc">XX mil</span></b><span>m² construídos</span></li>
-        <li class="stat"><b><span class="tbc">XX km</span></b><span>de redes e pavimentação executadas</span></li>
-        <li class="stat"><b><span class="tbc">XX</span></b><span>profissionais na equipe</span></li>
-      </ul>
-      <p class="muted-note" style="margin-top:3mm">Números a confirmar com a empresa.</p>
-    </div>
+    <div class="ill"><img src="img/projeto.svg" alt=""></div>
   </div>
   <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">02 <span>/</span> 10</span></div>
 </section>
 
-<!-- 3. ÁREAS DE ATUAÇÃO -->
+<!-- 3. PRINCÍPIOS -->
+<section class="page">
+  <p class="eyebrow">Nossos princípios</p>
+  <h2 class="title">O que orienta <span class="accent">cada obra</span></h2>
+  <div class="mvv" style="margin-bottom:8mm">
+    <div class="mvv__card"><div class="mvv__num">01</div><h3>Missão</h3><p>Planejar e executar obras e serviços de engenharia com segurança, qualidade técnica e responsabilidade, entregando a cada cliente o que foi contratado, no prazo e dentro do escopo.</p></div>
+    <div class="mvv__card"><div class="mvv__num">02</div><h3>Visão</h3><p>Ser reconhecida como uma empresa de engenharia e construção de confiança, lembrada pela solidez das obras que executa e pela seriedade com que trata cada cliente.</p></div>
+    <div class="mvv__card"><div class="mvv__num">03</div><h3>Valores</h3>
+      <ul class="values"><li>Segurança em primeiro lugar</li><li>Qualidade técnica</li><li>Ética e transparência</li><li>Compromisso com prazos</li><li>Respeito às pessoas e ao meio ambiente</li></ul></div>
+  </div>
+  <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">03 <span>/</span> 10</span></div>
+</section>
+
+<!-- 4. ÁREAS DE ATUAÇÃO -->
 <section class="page">
   <div class="head-split">
     <div><p class="eyebrow">Áreas de atuação</p><h2 class="title">O que <span class="accent">executamos</span></h2></div>
     <p class="lead">Soluções completas em edificações, infraestrutura e instalações, com acompanhamento técnico do planejamento à entrega.</p>
   </div>
-  <ul class="areas">
+  <ul class="areas" style="margin-top:9mm">
     <li class="area"><span class="area__num">01</span><h3>Construção de edifícios</h3><p>Obras de alvenaria, estruturas pré-moldadas de concreto, acabamentos e pintura.</p></li>
     <li class="area"><span class="area__num">02</span><h3>Infraestrutura e urbanização</h3><p>Terraplenagem, ruas, praças, calçadas e rodovias.</p></li>
     <li class="area"><span class="area__num">03</span><h3>Saneamento</h3><p>Redes de abastecimento de água, redes de coleta de esgoto e construções correlatas.</p></li>
@@ -232,184 +281,104 @@
     <li class="area"><span class="area__num">05</span><h3>Instalações prediais</h3><p>Instalações hidráulicas, sanitárias e de gás.</p></li>
     <li class="area"><span class="area__num">06</span><h3>Serviços de engenharia</h3><p>Serviços técnicos de engenharia, perfurações e sondagens, fornecimento de materiais.</p></li>
   </ul>
-  <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">03 <span>/</span> 10</span></div>
-</section>
-
-<!-- 4. CAPACIDADE TÉCNICA -->
-<section class="page">
-  <p class="eyebrow">Capacidade técnica</p>
-  <h2 class="title">Equipe e estrutura <span class="accent">próprias</span></h2>
-  <div class="cap">
-    <div class="cap__col">
-      <div class="ill" style="aspect-ratio:3/2"><img src="img/equipamentos.svg" alt=""></div>
-      <div class="box">
-        <h3>Equipamentos <span class="tbc" style="font-size:8.5pt">[A CONFIRMAR: lista real]</span></h3>
-        <ul class="tags"><li>Escavadeira hidráulica</li><li>Retroescavadeira</li><li>Caminhão basculante</li><li>Rolo compactador</li><li>Betoneira</li><li>Veículos de apoio</li></ul>
-      </div>
-    </div>
-    <div class="cap__col">
-      <div class="box">
-        <h3>Responsável técnico</h3>
-        <div class="rt">
-          <span class="rt__avatar"><svg><use href="#i-user"/></svg></span>
-          <div><b><span class="tbc">[A CONFIRMAR: nome do engenheiro]</span></b><span>Engenheiro(a) civil · CREA-PA <span class="tbc">[nº]</span></span></div>
-        </div>
-      </div>
-      <div class="box">
-        <h3>Equipe</h3>
-        <ul class="rows">
-          <li><span>Engenheiros</span><span class="tbc">XX</span></li>
-          <li><span>Técnicos em segurança do trabalho</span><span class="tbc">XX</span></li>
-          <li><span>Mestres de obras e encarregados</span><span class="tbc">XX</span></li>
-          <li><span>Operadores de máquinas e equipe de campo</span><span class="tbc">XX</span></li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>Documentação</h3>
-        <ul class="rows">
-          <li><span>Registro da empresa no CREA</span><span class="tbc">[nº]</span></li>
-          <li><span>Certidões e regularidade fiscal</span><span class="tbc">[em dia]</span></li>
-          <li><span>Acervo técnico (CATs)</span><span class="tbc">[XX]</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
   <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">04 <span>/</span> 10</span></div>
 </section>
 
-<!-- 5. SEGURANÇA, QUALIDADE E PRINCÍPIOS -->
+<!-- 5. COMO TRABALHAMOS -->
 <section class="page">
-  <p class="eyebrow">Segurança e qualidade</p>
-  <h2 class="title">Compromisso em <span class="accent">cada etapa</span></h2>
-  <div class="sq">
-    <div class="sq__card">
-      <h3>Segurança do trabalho</h3>
-      <ul class="dots">
-        <li><span><b>NR-18</b> — segurança na indústria da construção</span></li>
-        <li><span><b>NR-35</b> — trabalho em altura</span></li>
-        <li><span><b>NR-10</b> — serviços em eletricidade</span></li>
-        <li><span><b>NR-6</b> — equipamentos de proteção individual</span></li>
-        <li><span><b>PGR e PCMSO</b> — gestão de riscos e saúde ocupacional</span></li>
-      </ul>
-      <p class="muted-note" style="margin-top:2mm"><span class="tbc">[A CONFIRMAR: normas e programas adotados]</span></p>
-    </div>
-    <div class="sq__card">
-      <h3>Qualidade</h3>
-      <ul class="dots">
-        <li>Inspeção técnica em cada etapa da obra</li>
-        <li>Controle tecnológico de concreto e materiais</li>
-        <li>Diário de obra e registro fotográfico</li>
-        <li>Entrega com documentação técnica</li>
-        <li>Certificações: <span class="tbc">[ISO 9001 / PBQP-H, se houver]</span></li>
-      </ul>
-    </div>
-    <div class="sq__card mvv-mini">
-      <h3>Nossos princípios</h3>
-      <h4>Missão</h4>
-      <p>Planejar e executar obras e serviços de engenharia com segurança, qualidade técnica e responsabilidade, entregando o que foi contratado, no prazo e dentro do escopo.</p>
-      <h4>Visão</h4>
-      <p>Ser reconhecida como uma empresa de engenharia e construção de confiança, lembrada pela solidez das obras e pela seriedade com cada cliente.</p>
-      <h4>Valores</h4>
-      <p>Segurança em primeiro lugar · Qualidade técnica · Ética e transparência · Compromisso com prazos · Respeito às pessoas e ao meio ambiente.</p>
-    </div>
-  </div>
+  <p class="eyebrow">Como trabalhamos</p>
+  <h2 class="title">Do primeiro contato à <span class="accent">entrega da obra</span></h2>
+  <ol class="steps">
+    <li class="step"><div class="step__num">1</div><h3>Contato</h3><p>Você descreve a necessidade pelo WhatsApp ou e-mail.</p></li>
+    <li class="step"><div class="step__num">2</div><h3>Análise técnica</h3><p>Avaliamos escopo, projetos e condições do local.</p></li>
+    <li class="step"><div class="step__num">3</div><h3>Proposta</h3><p>Você recebe o orçamento com escopo e prazos definidos.</p></li>
+    <li class="step"><div class="step__num">4</div><h3>Execução e entrega</h3><p>Obra executada com acompanhamento técnico até a entrega.</p></li>
+  </ol>
+  <div class="note"><strong>Um só responsável</strong><p>Engenharia e execução lado a lado: o mesmo time que analisa e orça a obra acompanha a execução até a entrega.</p></div>
   <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">05 <span>/</span> 10</span></div>
 </section>
 
-<!-- 6. OBRA EM DESTAQUE 01 -->
+<!-- 6. POR QUE A GESTECNO -->
+<section class="page page--dark">
+  <div class="grid-deco"></div>
+  <p class="eyebrow eyebrow--light">Por que a Gestecno</p>
+  <h2 class="title">Estrutura para <span class="accent">obras completas</span></h2>
+  <p class="lead">Engenharia e execução lado a lado, do projeto à entrega.</p>
+  <ul class="chips"><li>Edificações</li><li>Infraestrutura</li><li>Urbanização</li><li>Saneamento</li><li>Redes elétricas</li><li>Instalações prediais</li><li>Serviços de engenharia</li></ul>
+  <div class="adv">
+    <div class="adv__item"><div class="adv__num">01</div><h3>Do terreno ao acabamento</h3><p>Sondagem, terraplenagem, estrutura, instalações e acabamento.</p></div>
+    <div class="adv__item"><div class="adv__num">02</div><h3>Da engenharia à execução</h3><p>Serviços de engenharia e execução de obras na mesma empresa.</p></div>
+    <div class="adv__item"><div class="adv__num">03</div><h3>Edificações e infraestrutura</h3><p>Atuação em edifícios, urbanização, saneamento e redes elétricas.</p></div>
+  </div>
+  <div class="foot"><img src="../../assets/img/logo-gestecno-branca.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">06 <span>/</span> 10</span></div>
+</section>
+
+<!-- 7. OBRA 01 -->
 <section class="page">
-  <p class="eyebrow">Obras em destaque · 01</p>
-  <h2 class="title">Edificações</h2>
+  <p class="eyebrow">Obras realizadas · 01 de 03</p>
+  <h2 class="title"><span class="tbc">[A CONFIRMAR: nome da obra]</span></h2>
   <div class="feat">
     <div class="ill"><img src="img/edificacao.svg" alt=""></div>
     <div class="ficha">
-      <span class="ficha__kind">Construção de edifício</span>
-      <h3><span class="tbc">[A CONFIRMAR: nome da obra]</span></h3>
-      <dl>
-        <dt>Cliente</dt><dd><span class="tbc">[nome do contratante]</span></dd>
+      <span class="ficha__kind"><span class="tbc">[tipo de obra — ex.: construção de edifício]</span></span>
+      <dl style="margin-top:4mm">
         <dt>Local</dt><dd><span class="tbc">[cidade/UF]</span></dd>
-        <dt>Área construída</dt><dd><span class="tbc">[XX m²]</span></dd>
-        <dt>Prazo</dt><dd><span class="tbc">[XX meses]</span></dd>
-        <dt>Conclusão</dt><dd><span class="tbc">[ano]</span></dd>
+        <dt>Cliente</dt><dd><span class="tbc">[nome, se puder divulgar]</span></dd>
+        <dt>Serviços</dt><dd><span class="tbc">[o que a Gestecno executou]</span></dd>
+        <dt>Ano</dt><dd><span class="tbc">[ano de conclusão]</span></dd>
       </dl>
-      <div class="scope">
-        <h4>Escopo executado</h4>
-        <ul><li>Fundações e estrutura de concreto</li><li>Alvenaria, revestimentos e acabamentos</li><li>Instalações elétricas e hidrossanitárias</li></ul>
-      </div>
-    </div>
-  </div>
-  <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">06 <span>/</span> 10</span></div>
-</section>
-
-<!-- 7. OBRA EM DESTAQUE 02 -->
-<section class="page">
-  <p class="eyebrow">Obras em destaque · 02</p>
-  <h2 class="title">Infraestrutura e urbanização</h2>
-  <div class="feat">
-    <div class="ill"><img src="img/urbanizacao.svg" alt=""></div>
-    <div class="ficha">
-      <span class="ficha__kind">Pavimentação e urbanização</span>
-      <h3><span class="tbc">[A CONFIRMAR: nome da obra]</span></h3>
-      <dl>
-        <dt>Cliente</dt><dd><span class="tbc">[nome do contratante]</span></dd>
-        <dt>Local</dt><dd><span class="tbc">[cidade/UF]</span></dd>
-        <dt>Extensão</dt><dd><span class="tbc">[XX km / XX m²]</span></dd>
-        <dt>Prazo</dt><dd><span class="tbc">[XX meses]</span></dd>
-        <dt>Conclusão</dt><dd><span class="tbc">[ano]</span></dd>
-      </dl>
-      <div class="scope">
-        <h4>Escopo executado</h4>
-        <ul><li>Terraplenagem e drenagem</li><li>Pavimentação e sinalização</li><li>Calçadas, meio-fio e paisagismo</li></ul>
+      <div class="about-desc">
+        <h4>Sobre a obra</h4>
+        <span class="tbc">[A CONFIRMAR: 2 ou 3 linhas sobre a obra — o que foi pedido, como foi executada e o resultado entregue.]</span>
       </div>
     </div>
   </div>
   <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">07 <span>/</span> 10</span></div>
 </section>
 
-<!-- 8. OBRAS 03 E 04 -->
+<!-- 8. OBRA 02 -->
 <section class="page">
-  <p class="eyebrow">Obras em destaque · 03 e 04</p>
-  <h2 class="title">Saneamento e redes elétricas</h2>
-  <div class="duo">
-    <div class="duo__item">
-      <div class="ill"><img src="img/saneamento.svg" alt=""></div>
-      <div class="duo__info">
-        <span class="ficha__kind">Saneamento</span>
-        <h3><span class="tbc">[A CONFIRMAR: nome da obra]</span></h3>
-        <div class="mini"><div><small>Cliente</small><span class="tbc">[contratante]</span></div><div><small>Local</small><span class="tbc">[cidade/UF]</span></div><div><small>Extensão</small><span class="tbc">[XX m de rede]</span></div></div>
-      </div>
-    </div>
-    <div class="duo__item">
-      <div class="ill"><img src="img/eletrica.svg" alt=""></div>
-      <div class="duo__info">
-        <span class="ficha__kind">Rede de distribuição elétrica</span>
-        <h3><span class="tbc">[A CONFIRMAR: nome da obra]</span></h3>
-        <div class="mini"><div><small>Cliente</small><span class="tbc">[contratante]</span></div><div><small>Local</small><span class="tbc">[cidade/UF]</span></div><div><small>Extensão</small><span class="tbc">[XX km de rede]</span></div></div>
+  <p class="eyebrow">Obras realizadas · 02 de 03</p>
+  <h2 class="title"><span class="tbc">[A CONFIRMAR: nome da obra]</span></h2>
+  <div class="feat">
+    <div class="ill"><img src="img/urbanizacao.svg" alt=""></div>
+    <div class="ficha">
+      <span class="ficha__kind"><span class="tbc">[tipo de obra — ex.: pavimentação e urbanização]</span></span>
+      <dl style="margin-top:4mm">
+        <dt>Local</dt><dd><span class="tbc">[cidade/UF]</span></dd>
+        <dt>Cliente</dt><dd><span class="tbc">[nome, se puder divulgar]</span></dd>
+        <dt>Serviços</dt><dd><span class="tbc">[o que a Gestecno executou]</span></dd>
+        <dt>Ano</dt><dd><span class="tbc">[ano de conclusão]</span></dd>
+      </dl>
+      <div class="about-desc">
+        <h4>Sobre a obra</h4>
+        <span class="tbc">[A CONFIRMAR: 2 ou 3 linhas sobre a obra — o que foi pedido, como foi executada e o resultado entregue.]</span>
       </div>
     </div>
   </div>
   <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">08 <span>/</span> 10</span></div>
 </section>
 
-<!-- 9. CLIENTES E ATESTADOS -->
+<!-- 9. OBRA 03 -->
 <section class="page">
-  <p class="eyebrow">Clientes e atestados</p>
-  <h2 class="title">Quem já <span class="accent">confiou</span> na Gestecno</h2>
-  <ul class="clients">
-    <li class="client">Logo do cliente</li><li class="client">Logo do cliente</li><li class="client">Logo do cliente</li><li class="client">Logo do cliente</li>
-    <li class="client">Logo do cliente</li><li class="client">Logo do cliente</li><li class="client">Logo do cliente</li><li class="client">Logo do cliente</li>
-  </ul>
-  <h3 class="sub">Atestados de capacidade técnica</h3>
-  <table class="table">
-    <thead><tr><th>Obra / serviço</th><th>Contratante</th><th>Local</th><th>Ano</th><th>CAT nº</th></tr></thead>
-    <tbody>
-      <tr><td><span class="tbc">[obra]</span></td><td><span class="tbc">[contratante]</span></td><td><span class="tbc">[cidade/UF]</span></td><td><span class="tbc">[ano]</span></td><td><span class="tbc">[nº]</span></td></tr>
-      <tr><td><span class="tbc">[obra]</span></td><td><span class="tbc">[contratante]</span></td><td><span class="tbc">[cidade/UF]</span></td><td><span class="tbc">[ano]</span></td><td><span class="tbc">[nº]</span></td></tr>
-      <tr><td><span class="tbc">[obra]</span></td><td><span class="tbc">[contratante]</span></td><td><span class="tbc">[cidade/UF]</span></td><td><span class="tbc">[ano]</span></td><td><span class="tbc">[nº]</span></td></tr>
-      <tr><td><span class="tbc">[obra]</span></td><td><span class="tbc">[contratante]</span></td><td><span class="tbc">[cidade/UF]</span></td><td><span class="tbc">[ano]</span></td><td><span class="tbc">[nº]</span></td></tr>
-      <tr><td><span class="tbc">[obra]</span></td><td><span class="tbc">[contratante]</span></td><td><span class="tbc">[cidade/UF]</span></td><td><span class="tbc">[ano]</span></td><td><span class="tbc">[nº]</span></td></tr>
-    </tbody>
-  </table>
+  <p class="eyebrow">Obras realizadas · 03 de 03</p>
+  <h2 class="title"><span class="tbc">[A CONFIRMAR: nome da obra]</span></h2>
+  <div class="feat">
+    <div class="ill"><img src="img/saneamento.svg" alt=""></div>
+    <div class="ficha">
+      <span class="ficha__kind"><span class="tbc">[tipo de obra — ex.: rede de saneamento]</span></span>
+      <dl style="margin-top:4mm">
+        <dt>Local</dt><dd><span class="tbc">[cidade/UF]</span></dd>
+        <dt>Cliente</dt><dd><span class="tbc">[nome, se puder divulgar]</span></dd>
+        <dt>Serviços</dt><dd><span class="tbc">[o que a Gestecno executou]</span></dd>
+        <dt>Ano</dt><dd><span class="tbc">[ano de conclusão]</span></dd>
+      </dl>
+      <div class="about-desc">
+        <h4>Sobre a obra</h4>
+        <span class="tbc">[A CONFIRMAR: 2 ou 3 linhas sobre a obra — o que foi pedido, como foi executada e o resultado entregue.]</span>
+      </div>
+    </div>
+  </div>
   <div class="foot"><img src="../../assets/img/logo-gestecno.png" alt=""><span>gestecnoengenharia.com.br</span><span class="foot__num">09 <span>/</span> 10</span></div>
 </section>
 
