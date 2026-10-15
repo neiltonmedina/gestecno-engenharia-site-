@@ -2,7 +2,7 @@
 
 Site de uma página da **GESTECNO ENGENHARIA LTDA**, feito em HTML + CSS + JavaScript puro,
 sem framework e sem etapa de build. Pronto para publicar na Vercel em
-`https://gestecnoengenharia.com.br`.
+`https://gestecnoengenharia.com`.
 
 > **Status:** layout final, galeria com lightbox e dados da empresa prontos.
 > Falta preencher os itens `[A CONFIRMAR]` (principalmente WhatsApp, Instagram e fotos reais).
@@ -74,7 +74,7 @@ com "Localizar e substituir":
 ### Dados já preenchidos (fonte: cartão CNPJ da Receita Federal)
 
 Endereço da sede (Parauapebas/PA) e e-mail
-`comercial@gestecnoengenharia.com.br`. Razão social e CNPJ aparecem só no rodapé e nos
+`comercial@gestecnoengenharia.com`. Razão social e CNPJ aparecem só no rodapé e nos
 dados estruturados (SEO), que não são visíveis na página.
 Os **cards de Serviços** e os **Diferenciais** foram escritos a partir das atividades
 registradas no CNPJ (CNAEs) — revise com a empresa e ajuste ao que ela realmente executa hoje.
@@ -169,40 +169,24 @@ Este repositório contém só o site, então a raiz do projeto é a própria rai
    *Install Command* vazios e *Output Directory* como `.` (padrão).
 3. Clique em **Deploy**. A Vercel gera um endereço provisório (`*.vercel.app`) — confira o site nele.
 
-### Conectar o domínio gestecnoengenharia.com.br
+### Conectar o domínio gestecnoengenharia.com
+
+O domínio foi **comprado direto na Vercel**, então a conexão é automática — não é
+preciso configurar DNS em outro provedor (Registro.br não se aplica aqui, é só para
+domínios `.com.br`).
 
 1. No projeto da Vercel: **Settings → Domains → Add**.
-2. Adicione `gestecnoengenharia.com.br` **e** `www.gestecnoengenharia.com.br`.
+2. Adicione `gestecnoengenharia.com` **e** `www.gestecnoengenharia.com`.
    Escolha qual será o principal (recomendado: sem `www`) e deixe o outro redirecionando.
-3. A Vercel mostrará os registros DNS a criar. Normalmente são:
+3. Como o domínio já está na mesma conta Vercel, ele conecta e emite o certificado
+   HTTPS automaticamente, sem precisar editar registros DNS manualmente.
+4. Depois de assinar um serviço de e-mail (Zoho Mail, Google Workspace etc.) para
+   `comercial@gestecnoengenharia.com`, adicione os registros **MX** e **TXT** que o
+   provedor pedir em **Settings → Domains → gestecnoengenharia.com → DNS Records**.
 
-| Tipo  | Nome (no Registro.br) | Valor                     |
-|-------|-----------------------|---------------------------|
-| A     | *(vazio / raiz)*      | `76.76.21.21`             |
-| CNAME | `www`                 | `cname.vercel-dns.com.`   |
-
-> Use sempre os valores **exibidos no painel da Vercel** — eles podem mudar.
-
-### Configurar no Registro.br
-
-1. Entre em <https://registro.br> → **Meus domínios** → `gestecnoengenharia.com.br`.
-2. Em **DNS**, confira se está usando os servidores do Registro.br
-   (*"Utilizar os servidores DNS do Registro.br"*). Se o DNS estiver em outro provedor
-   (ex.: provedor de e-mail ou hospedagem antiga), faça as alterações **lá**.
-3. Clique em **Configurar zona DNS / Editar zona**.
-4. **Antes de alterar qualquer coisa, tire um print ou anote todos os registros existentes.**
-5. Adicione/edite **apenas**:
-   - o registro **A** da raiz → `76.76.21.21`
-     (se já existir um A da raiz apontando para outra hospedagem, substitua só ele);
-   - o registro **CNAME** `www` → `cname.vercel-dns.com.`
-     (se existir um A para `www`, remova esse A, pois não pode haver A e CNAME no mesmo nome).
-6. Salve. A propagação costuma levar de minutos a algumas horas.
-7. Volte em **Settings → Domains** na Vercel e aguarde o status *Valid Configuration*.
-   O certificado HTTPS é emitido automaticamente.
-
-> 🚫 **NÃO apague registros MX, TXT (SPF, DKIM, DMARC, verificação do Google/Microsoft)
-> nem CNAMEs de e-mail (`autodiscover`, `mail`, etc.).** Eles mantêm o e-mail da empresa
-> funcionando. Mexa somente no A da raiz e no `www`.
+> 🚫 **NÃO apague registros MX, TXT (SPF, DKIM, DMARC) nem CNAMEs de e-mail**
+> (`autodiscover`, `mail`, etc.) depois de configurados — eles mantêm o e-mail da
+> empresa funcionando.
 
 ### Depois de publicar
 
