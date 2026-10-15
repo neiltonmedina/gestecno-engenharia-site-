@@ -20,7 +20,7 @@ gestecno-engenharia-site-/
 │   ├── img/                    # logo, favicon, imagem do hero, imagem de compartilhamento (og)
 │   ├── obras/                  # fotos da galeria (WebP)
 │   └── portfolio/
-│       └── portfolio-gestecno.pdf   # PLACEHOLDER — substituir pelo portfólio real
+│       └── portfolio-gestecno.pdf   # portfólio de 10 páginas (gerado de scripts/portfolio/)
 ├── scripts/otimizar_fotos.py   # opcional: converte fotos para WebP (máx. 1600 px)
 ├── favicon.ico
 ├── robots.txt
@@ -106,7 +106,7 @@ o telefone e o WhatsApp continuam como `[A CONFIRMAR]`.
 **Contato**
 - [ ] Número do WhatsApp (exibido e no link) e telefone
 - [ ] @ do Instagram
-- [ ] Portfólio: substituir `assets/portfolio/portfolio-gestecno.pdf` (manter o mesmo nome)
+- [ ] Portfólio: editar `scripts/portfolio/portfolio.html` (fotos, WhatsApp, Instagram) e gerar o PDF de novo com `node scripts/portfolio/gerar_pdf.js`
 
 **Arquivos**
 - [ ] `sitemap.xml`: atualizar `<lastmod>` quando publicar
