@@ -113,6 +113,12 @@ o telefone e o WhatsApp continuam como `[A CONFIRMAR]`.
 
 ---
 
+## Ao alterar CSS ou JS
+
+O navegador guarda `style.css` e `main.js` em cache por até 1 dia. Sempre que alterar esses
+arquivos, troque o número `?v=` nos links do `index.html` (ex.: `style.css?v=20261015` →
+`style.css?v=20261020`) para os visitantes receberem a versão nova na hora.
+
 ## Trocar cores e fontes
 
 Tudo está em variáveis no início de `css/style.css`:

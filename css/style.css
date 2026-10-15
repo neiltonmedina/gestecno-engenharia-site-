@@ -351,7 +351,7 @@ mark.tbc {
 .section__head { max-width: 46rem; margin-bottom: 2.5rem; }
 .section__head--split { max-width: none; }
 .section__title { font-size: clamp(1.75rem, 4.6vw, 2.6rem); font-weight: 800; }
-.section__lead { margin: 0; color: var(--color-text-muted); font-size: 1.05rem; max-width: 34rem; }
+.section__lead { margin: 0; color: var(--color-text-muted); font-size: 1.05rem; max-width: 34rem; text-wrap: balance; }
 
 /* ---------- 3. Quem somos ---------- */
 .about { display: grid; gap: 2.5rem; }
@@ -435,6 +435,18 @@ mark.tbc {
 .principle__icon .icon { width: 22px; height: 22px; }
 .principle__title { font-size: 1.3rem; margin-bottom: 0.4rem; }
 .principle__text { margin: 0; color: var(--color-text-muted); }
+.principle__values { display: grid; gap: 0.4rem; }
+.principle__values li { position: relative; padding-left: 1.1rem; color: var(--color-text-muted); }
+.principle__values li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--color-accent);
+}
 
 /* ---------- 4. Serviços ---------- */
 .cards { display: grid; gap: 1.25rem; }
@@ -770,6 +782,38 @@ mark.tbc {
 .whatsapp-float .icon { width: 32px; height: 32px; }
 .whatsapp-float:hover { background: var(--color-whatsapp-dark); color: #fff; transform: scale(1.06); }
 .whatsapp-float:focus-visible { outline-offset: 4px; border-radius: 50%; }
+
+/* ==========================================================================
+   Celular (< 640px)
+   ========================================================================== */
+.only-desktop { display: none; }
+@media (max-width: 639.98px) {
+  /* Botões principais ocupam a largura toda */
+  .hero__actions .btn,
+  .contact__actions .btn,
+  .cta-band .btn { width: 100%; }
+  .cta-band .btn { justify-self: stretch; }
+
+  /* Galeria vira carrossel horizontal de deslizar */
+  .gallery {
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 0.25rem var(--gutter) 1rem;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .gallery__item { scroll-snap-align: start; }
+}
+@media (min-width: 640px) {
+  .only-desktop { display: inline; }
+  .only-mobile { display: none; }
+}
 
 /* ==========================================================================
    Tablet (≥ 640px)

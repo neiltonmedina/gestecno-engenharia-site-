@@ -35,7 +35,7 @@
   <!-- Imagem do hero carregada com prioridade -->
   <link rel="preload" as="image" href="/assets/img/hero.webp" type="image/webp" fetchpriority="high">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=20261015b">
 
   <!-- Dados estruturados (schema.org). Dados do cartão CNPJ; preencha os campos [A CONFIRMAR: ...]. -->
   <script type="application/ld+json">
@@ -220,7 +220,7 @@
     </section>
 
     <!-- ===================== MISSÃO, VISÃO E VALORES ===================== -->
-    <!-- Textos devem vir da empresa. Substitua cada [A CONFIRMAR] pelo texto oficial. -->
+    <!-- Textos propostos — revisar com a direção da empresa. -->
     <section class="section principles" id="principios" aria-labelledby="principios-titulo">
       <div class="container">
         <div class="section__head">
@@ -231,17 +231,23 @@
           <li class="principle">
             <span class="principle__icon" aria-hidden="true"><svg class="icon"><use href="#i-clipboard"/></svg></span>
             <h3 class="principle__title">Missão</h3>
-            <p class="principle__text"><mark class="tbc">[A CONFIRMAR: missão da empresa — o que a Gestecno faz e para quem]</mark></p>
+            <p class="principle__text">Planejar e executar obras e serviços de engenharia com segurança, qualidade técnica e responsabilidade, entregando a cada cliente o que foi contratado, no prazo e dentro do escopo.</p>
           </li>
           <li class="principle">
             <span class="principle__icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
             <h3 class="principle__title">Visão</h3>
-            <p class="principle__text"><mark class="tbc">[A CONFIRMAR: visão da empresa — onde a Gestecno quer chegar]</mark></p>
+            <p class="principle__text">Ser reconhecida como uma empresa de engenharia e construção de confiança, lembrada pela solidez das obras que executa e pela seriedade com que trata cada cliente.</p>
           </li>
           <li class="principle">
             <span class="principle__icon" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
             <h3 class="principle__title">Valores</h3>
-            <p class="principle__text"><mark class="tbc">[A CONFIRMAR: valores da empresa — ex.: segurança, qualidade, ética, cumprimento de prazos]</mark></p>
+            <ul class="principle__values" role="list">
+              <li>Segurança em primeiro lugar</li>
+              <li>Qualidade técnica</li>
+              <li>Ética e transparência</li>
+              <li>Compromisso com prazos</li>
+              <li>Respeito às pessoas e ao meio ambiente</li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -256,7 +262,8 @@
             <h2 id="servicos-titulo" class="section__title">Serviços</h2>
           </div>
           <p class="section__lead">
-            Atuação em edificações, infraestrutura e instalações, da engenharia à execução.
+            Soluções completas em edificações, infraestrutura e instalações,
+            com acompanhamento técnico do planejamento à entrega.
           </p>
         </div>
 
@@ -424,7 +431,7 @@
             <p class="eyebrow">Portfólio</p>
             <h2 id="obras-titulo" class="section__title">Obras</h2>
           </div>
-          <p class="section__lead">Clique em uma foto para ampliar.</p>
+          <p class="section__lead"><span class="only-desktop">Clique em uma foto para ampliar.</span><span class="only-mobile">Deslize para ver mais e toque para ampliar.</span></p>
         </div>
 
         <!--
@@ -568,7 +575,7 @@
             <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
             <div>
               <span class="contact__label">E-mail</span>
-              <a href="mailto:comercial@gestecnoengenharia.com.br">comercial@gestecnoengenharia.com.br</a>
+              <a href="mailto:comercial@gestecnoengenharia.com.br">comercial@<wbr>gestecnoengenharia.com.br</a>
             </div>
           </li>
           <li>
@@ -660,6 +667,6 @@
     </button>
   </div>
 
-  <script src="/js/main.js" defer></script>
+  <script src="/js/main.js?v=20261015b" defer></script>
 </body>
 </html>
