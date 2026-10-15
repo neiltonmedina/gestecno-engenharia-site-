@@ -73,7 +73,7 @@ com "Localizar e substituir":
 
 ### Dados já preenchidos (fonte: cartão CNPJ da Receita Federal)
 
-Ano de fundação (2005), endereço da sede (Parauapebas/PA) e e-mail
+Endereço da sede (Parauapebas/PA) e e-mail
 `comercial@gestecnoengenharia.com.br`. Razão social e CNPJ aparecem só no rodapé e nos
 dados estruturados (SEO), que não são visíveis na página.
 Os **cards de Serviços** e os **Diferenciais** foram escritos a partir das atividades
