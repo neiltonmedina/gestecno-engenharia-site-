@@ -20,7 +20,8 @@ gestecno-engenharia-site-/
 │   ├── img/                    # logo, favicon, imagem do hero, imagem de compartilhamento (og)
 │   ├── obras/                  # fotos da galeria (WebP)
 │   └── portfolio/
-│       └── portfolio-gestecno.pdf   # portfólio de 10 páginas (gerado de scripts/portfolio/)
+│       └── portfolio-gestecno.pdf   # portfólio de 11 páginas fornecido pela empresa (não gerar de novo
+│                                    # com scripts/portfolio/ — isso sobrescreveria com a versão antiga)
 ├── scripts/otimizar_fotos.py   # opcional: converte fotos para WebP (máx. 1600 px)
 ├── favicon.ico
 ├── robots.txt
@@ -106,7 +107,10 @@ o telefone e o WhatsApp continuam como `[A CONFIRMAR]`.
 **Contato**
 - [ ] Número do WhatsApp (exibido e no link) e telefone
 - [ ] @ do Instagram
-- [ ] Portfólio: editar `scripts/portfolio/portfolio.html` (fotos, WhatsApp, Instagram) e gerar o PDF de novo com `node scripts/portfolio/gerar_pdf.js`
+- [x] Portfólio: `assets/portfolio/portfolio-gestecno.pdf` é a versão de 11 páginas fornecida pela
+  empresa. Para atualizar, substitua esse arquivo diretamente (mantendo o nome) — não rode
+  `scripts/portfolio/gerar_pdf.js`, que regeneraria a versão antiga a partir do HTML em
+  `scripts/portfolio/`.
 
 **Arquivos**
 - [ ] `sitemap.xml`: atualizar `<lastmod>` quando publicar
