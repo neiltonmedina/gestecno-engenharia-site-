@@ -920,3 +920,9 @@ mark.tbc {
 
   .whatsapp-float { right: 1.5rem; bottom: 1.5rem; }
 }
+
+/* Clientes: preserve as cores e proporções de cada marca. */
+.clients__list { display: grid; grid-template-columns: 1fr; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.clients__item { min-width: 0; display: grid; place-items: center; padding: 2rem; min-height: 220px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
+.clients__item img { display: block; width: 100%; height: 155px; object-fit: contain; }
+@media (min-width: 640px) { .clients__list { grid-template-columns: repeat(3, minmax(0, 1fr)); } .clients__item { padding: 1.5rem; } }
