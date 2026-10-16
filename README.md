@@ -201,6 +201,27 @@ domínios `.com.br`).
 
 ---
 
+## E-mail profissional (Zoho Mail)
+
+A caixa `comercial@gestecnoengenharia.com` roda no **Zoho Mail** (plano Mail Lite 5 GB,
+~R$ 60/ano), com o domínio hospedado e verificado na Vercel.
+
+- **Webmail:** <https://mail.zoho.com> — login com `comercial@gestecnoengenharia.com` e a senha
+  cadastrada.
+- **App Zoho Mail** (Android/iPhone): mesmo login.
+- **Configuração manual (Outlook, app nativo do celular etc.):**
+
+  | | Servidor | Porta | SSL |
+  |---|---|---|---|
+  | Entrada (IMAP) | `imappro.zoho.com` | 993 | Sim |
+  | Saída (SMTP) | `smtppro.zoho.com` | 465 (SSL) ou 587 (TLS) | Sim |
+
+  Usuário: `comercial@gestecnoengenharia.com` · Senha: a da caixa.
+
+- **DNS:** os registros **MX** (`mx.zoho.com`, `mx2.zoho.com`, `mx3.zoho.com`) e o **TXT** de
+  verificação do domínio já estão cadastrados em **Vercel → projeto → Settings → Domains →
+  gestecnoengenharia.com → DNS Records**. Não apague esses registros.
+
 ## Segurança (Content-Security-Policy)
 
 O `vercel.json` só permite carregar scripts, estilos e imagens do próprio site, e fontes do
