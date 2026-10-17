@@ -1,0 +1,121 @@
+name: Finalizar PDF do portfólio GESTECNO
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/finalizar-portfolio.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar editor de PDF
+        run: pip install 'pymupdf==1.26.7'
+      - name: Atualizar PDF e links
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          import fitz
+
+          pdf = Path("assets/portfolio/portfolio-gestecno.pdf")
+          assert pdf.exists(), f"PDF não encontrado: {pdf}"
+          doc = fitz.open(pdf)
+          assert len(doc) == 11, f"Portfólio não possui 11 páginas: {len(doc)}"
+
+          # Não aplicar este ajuste a um portfólio antigo/incompleto.
+          text = "\n".join(p.get_text().lower() for p in doc)
+          required = ("cesom", "tecsolo", "mgr", "task")
+          missing = [name for name in required if name not in text]
+          assert not missing, f"Portfólio no GitHub não é o final, faltam clientes: {missing}"
+
+          old_name = "@gestecnoengenharia"
+          new_name = "@gestecno.engenharia"
+          old_url = "https://www.instagram.com/gestecnoengenharia/"
+          new_url = "https://www.instagram.com/gestecno.engenharia/"
+          p = doc[-1]
+          lines = p.get_text().splitlines()
+          old_present = old_name in lines
+          already_new = new_name in lines
+          assert old_present != already_new, "Instagram ausente ou duplicado no PDF."
+
+          if old_present:
+              spans = [s for b in p.get_text("dict")["blocks"] if "lines" in b
+                       for ln in b["lines"] for s in ln["spans"] if s["text"] == old_name]
+              assert len(spans) == 1
+              original = spans[0]
+              bbox = fitz.Rect(original["bbox"])
+              redactions = [fitz.Rect(bbox.x0 - 2, bbox.y0 - 1, bbox.x1 + 2, bbox.y1 + 1)]
+              base = original["origin"]
+              color_code = original["color"]
+              color = ((color_code >> 16 & 255) / 255, (color_code >> 8 & 255) / 255, (color_code & 255) / 255)
+              font_size = original["size"]
+          else:
+              redactions = []
+
+          # Remover todos os rodapés de revisão, se ainda existirem no arquivo remoto.
+          footer_removed = 0
+          for page in doc:
+              for rect in page.search_for("Versão para aprovação do conteúdo."):
+                  if rect.y0 > 500:
+                      page.add_redact_annot(fitz.Rect(40, rect.y0 - 2, min(650, rect.x1 + 4), rect.y1 + 2),
+                                            fill=(1, 1, 1))
+                      footer_removed += 1
+
+          if old_present:
+              for r in redactions:
+                  p.add_redact_annot(r, fill=(1, 1, 1))
+
+          for page in doc:
+              page.apply_redactions(images=0, graphics=0, text=0)
+
+          if old_present:
+              preferred = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf")
+              assert preferred.exists(), "Fonte DejaVu não encontrada"
+              p.insert_font(fontname="DVSBold", fontfile=str(preferred))
+              p.insert_text(base, new_name, fontname="DVSBold",
+                            fontsize=font_size, color=color, overlay=True)
+              p.insert_link({"kind": fitz.LINK_URI,
+                             "from": fitz.Rect(382, 292, 798, 319), "uri": new_url})
+
+          # O arquivo pode ter um link antigo que não foi removido ao redigir.
+          # Após reabrir, confirmar os hyperlinks para evitar um botão quebrado.
+          tmp = pdf.with_name("portfolio-gestecno-ajustado.pdf")
+          doc.save(tmp, garbage=4, deflate=True)
+          doc.close()
+          test = fitz.open(tmp)
+          assert new_name in test[-1].get_text().splitlines()
+          assert old_name not in test[-1].get_text().splitlines()
+          assert not any("Versão para aprovação do conteúdo." in pg.get_text() for pg in test)
+          new_links = [li for pg in test for li in pg.get_links() if li.get("uri") == new_url]
+          old_links = [li for pg in test for li in pg.get_links() if li.get("uri") == old_url]
+          assert new_links and not old_links, f"Links não atualizados: {len(new_links)}, {len(old_links)}"
+          test.close()
+          os.replace(tmp, pdf)
+          print(f"PDF validado: 11 páginas, Instagram correto, {footer_removed} rodapés de revisão removidos.")
+          PY
+      - name: Publicar novo PDF no site
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/portfolio/portfolio-gestecno.pdf
+          if git diff --cached --quiet; then
+            echo "O PDF já estava atualizado."
+            exit 0
+          fi
+          git commit -m "Atualiza PDF do portfólio GESTECNO para versão do cliente"
+          git push
