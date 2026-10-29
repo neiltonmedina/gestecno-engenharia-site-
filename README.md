@@ -229,6 +229,10 @@ A caixa `comercial@gestecnoengenharia.com` roda no **Zoho Mail** (plano Mail Lit
   | MX | (vazio) | `mx3.zoho.com` (prioridade 50) | Recebimento de e-mail |
   | TXT | (vazio) | `v=spf1 include:zohomail.com ~all` | SPF — autoriza o Zoho a enviar e-mails pelo domínio |
   | TXT | `zoho._domainkey` | chave DKIM gerada pelo Zoho (2048 bits) | DKIM — assina os e-mails enviados para evitar spam/spoofing |
+  | TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:comercial@gestecnoengenharia.com; ruf=mailto:comercial@gestecnoengenharia.com; sp=none; adkim=r; aspf=r; pct=100` | DMARC — política de proteção contra falsificação de e-mail (modo monitoramento) |
+
+  BIMI (logo ao lado do e-mail) não foi configurado: exige certificado VMC pago e DMARC em
+  modo `quarentena`/`rejeitar`, não compensa para o momento.
 
 ## Segurança (Content-Security-Policy)
 
