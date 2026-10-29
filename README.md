@@ -218,9 +218,17 @@ A caixa `comercial@gestecnoengenharia.com` roda no **Zoho Mail** (plano Mail Lit
 
   Usuário: `comercial@gestecnoengenharia.com` · Senha: a da caixa.
 
-- **DNS:** os registros **MX** (`mx.zoho.com`, `mx2.zoho.com`, `mx3.zoho.com`) e o **TXT** de
-  verificação do domínio já estão cadastrados em **Vercel → projeto → Settings → Domains →
-  gestecnoengenharia.com → DNS Records**. Não apague esses registros.
+- **DNS:** os registros abaixo já estão cadastrados em **Vercel → projeto → Settings → Domains →
+  gestecnoengenharia.com → DNS Records** e **verificados** no painel do Zoho. Não apague nenhum deles:
+
+  | Tipo | Nome/host | Valor | Finalidade |
+  |---|---|---|---|
+  | TXT | (vazio) | `zoho-verification=zb96424444.zmverify.zoho.com` | Verificação do domínio |
+  | MX | (vazio) | `mx.zoho.com` (prioridade 10) | Recebimento de e-mail |
+  | MX | (vazio) | `mx2.zoho.com` (prioridade 20) | Recebimento de e-mail |
+  | MX | (vazio) | `mx3.zoho.com` (prioridade 50) | Recebimento de e-mail |
+  | TXT | (vazio) | `v=spf1 include:zohomail.com ~all` | SPF — autoriza o Zoho a enviar e-mails pelo domínio |
+  | TXT | `zoho._domainkey` | chave DKIM gerada pelo Zoho (2048 bits) | DKIM — assina os e-mails enviados para evitar spam/spoofing |
 
 ## Segurança (Content-Security-Policy)
 
